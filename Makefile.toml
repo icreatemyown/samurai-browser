@@ -1,0 +1,9 @@
+[config]
+skip_core_tasks = true
+skip_crate_env_info = true
+skip_git_env_info = true
+skip_rust_env_info = false
+
+[tasks."dev"]
+script = "cargo run"
+watch.watch = ["src"]
