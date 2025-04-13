@@ -5,5 +5,7 @@ skip_git_env_info = true
 skip_rust_env_info = false
 
 [tasks."dev"]
-script = "cargo run"
-watch.watch = ["src"]
+script = "npx tauri dev"
+
+[tasks.build]
+linux.script = "npx tauri build --target x86_64-pc-windows-msvc"

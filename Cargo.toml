@@ -1,8 +1,0 @@
-[package]
-name = "samurai-browser"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
-cef = "134.3.7"
-cef-dll-sys = "134.3.7"
