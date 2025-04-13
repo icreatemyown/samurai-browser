@@ -1,0 +1,8 @@
+[package]
+name = "cefbased"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cef = { path = "../cef-rs/cef" }
+cef-dll-sys = { path = "../cef-rs/sys" }
