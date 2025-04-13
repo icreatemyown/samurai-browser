@@ -8,4 +8,4 @@ skip_rust_env_info = false
 script = "npx tauri dev"
 
 [tasks.build]
-linux.script = "npx tauri build --target x86_64-pc-windows-msvc"
+windows.script = "npx tauri build --target x86_64-pc-windows-msvc"
