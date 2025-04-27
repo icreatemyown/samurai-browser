@@ -5,7 +5,14 @@ skip_git_env_info = true
 skip_rust_env_info = false
 
 [tasks."dev"]
-script = "npx tauri dev"
+command = "cargo-tauri"
+args = [ "dev" ]
+
+[tasks."check"]
+watch.watch = [ "./src-tauri" ]
+script = "cargo clippy"
+cwd = "src-tauri"
 
 [tasks.build]
-windows.script = "npx tauri build --target x86_64-pc-windows-msvc"
+command = "cargo-tauri"
+args = [ "build", "--target", "x86_64-pc-windows-msvc" ]

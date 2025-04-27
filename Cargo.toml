@@ -1,0 +1,7 @@
+cargo-features = [ "codegen-backend" ]
+[profile.dev]
+codegen-backend = "cranelift"
+
+[workspace]
+members = [ "src-tauri" ]
+resolver = "3"
