@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    samurai_browser_lib::run()
+    samurai_browser_lib::run();
 }

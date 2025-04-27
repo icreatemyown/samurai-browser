@@ -4,13 +4,10 @@ import { listen } from "@tauri-apps/api/event";
 import { onMount } from "solid-js";
 import { useAutoClean } from "../../5-shared/lib/cleanup/cleanup.ts";
 
-export type TabAddr = {
-	kind: "search" | "url";
-	src: string;
-};
 export type Tab = {
-	addr: TabAddr;
-	label: string;
+	id: string;
+	url: string;
+	customTitle?: string;
 };
 
 export function useBrowserTabs() {
@@ -18,7 +15,7 @@ export function useBrowserTabs() {
 	const queryTabs = useQuery(() => ({
 		queryKey: ["tabs"],
 		async queryFn() {
-			const tabs = await invoke<Tab[]>("tabs_get");
+			const tabs = await invoke<Tab[]>("command_tabs_get_opened");
 			console.log(tabs);
 			return tabs;
 		},
@@ -35,8 +32,8 @@ export function useBrowserTabs() {
 	const mutationAddTab = useMutation(() => ({
 		mutationKey: ["tabs", "new"],
 		async mutationFn() {
-			const tab = await invoke<Tab>("tabs_add", {
-				url: Math.random() > 0.5 ? "https://yandex.ru" : "wtf",
+			const tab = await invoke<Tab>("command_tabs_add", {
+				url: Math.random() > 0.5 ? "https://yandex.ru" : "https://google.com",
 			});
 			return tab;
 		},

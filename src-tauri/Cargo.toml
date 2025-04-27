@@ -1,11 +1,9 @@
-
-
 [package]
 name = "samurai-browser"
 version = "0.1.0"
 description = "A Tauri App"
 authors = [ "you" ]
-edition = "2021"
+edition = "2024"
 
 [lib]
 name = "samurai_browser_lib"
@@ -24,3 +22,10 @@ derive_more = { version = "2.0.1", features = [ "deref", "from" ] }
 url = { version = "2.5.4", features = [ "serde" ] }
 uuid = { version = "1.16.0", features = [ "serde", "v4" ] }
 itertools = "0.14.0"
+async-trait = "0.1.88"
+tracing-subscriber = "0.3.19"
+tracing = "0.1.41"
+eyre = "0.6.12"
+
+[lints]
+workspace = true
